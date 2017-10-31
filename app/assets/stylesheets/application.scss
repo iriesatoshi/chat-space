@@ -1,1 +1,133 @@
+/*
+*= require font-awesome
+*/
 @import "./reset";
+.wrapper{
+  .side-nav {
+    width: 300px;
+    float: left;
+    .account {
+      background-color: #253141;
+      height: 65px;
+      padding-top: 35px;
+        .name {
+            color: #FFFFFF;
+            font-size: 16px;
+            padding-left: 20px;
+            font-family: Bold;
+            display: inline;
+        }
+        .fa.fa-pencil-square-o{
+          color: #FFFFFF;
+          padding-top: 5px;
+          padding-right: 20px;
+          float: right;
+        }
+        .fa.fa-cog{
+          color: #FFFFFF;
+          padding-top: 5px;
+          padding-right: 20px;
+          float: right;
+        }
+     }
+    .group {
+      background-color: #2f3e51;
+      height: 726px;
+        .group_name {
+            color: #FFFFFF;
+            font-size: 15px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+        .group_name--comment{
+            color: #FFFFFF;
+            font-size: 11px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+    }
+  }
+
+  .content {
+    height: 550px;
+    width: calc(100vw - 300px);
+    float: left;
+    .content_group {
+      height: 65px;
+      padding-top: 35px;
+      background-color: #AAAAAA;
+      padding-left: 40px;
+        .content_group--name {
+            color: #333333;
+            font-size: 20px;
+            display: inline;
+        }
+        .content_group--edit{
+            background-color: white;
+            color: blue;
+            height: 40px;
+            margin-right: 40px;
+            float: right;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .content_group--member{
+            color: #999999;
+            padding-top: 15px;
+            font-size: 12px;
+        }
+
+     }
+    .content_message {
+      height: 550px;
+      padding-top: 46px;
+      padding-left: 40px;
+      list-style: none;
+        .content_message--name {
+            color: #434A54;
+            font-size: 16px;
+            font-family: Bold;
+            padding-right: 10px;
+            float: left;
+        }
+        .content_message--date{
+            color: #999999;
+            font-size: 12px;
+            padding-top: 4px;
+        }
+        .content_message--comment {
+            color: #434A54;
+            font-size: 14px;
+            padding-top: 10px;
+            padding-bottom: 40px;
+        }
+    }
+    .content_typemessage {
+      height: 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+        .content_typemessage--space {
+            color: #434A54;
+            font-size: 16px;
+            padding-left: 10px;
+            display: inline;
+        }
+        .fa.fa-file-image-o{
+            padding-right: 25px;
+            float: right;
+        }
+        .content_typemessage--send {
+            background-color: #38AEF0;
+            color: #FFFFFF;
+            font-size: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
+            float: right;
+            margin-right: 40px;
+            height: 50px;
+        }
+    }
+  }
+}
