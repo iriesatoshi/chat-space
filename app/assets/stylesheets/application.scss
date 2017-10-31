@@ -8,7 +8,7 @@
     width: 300px;
     float: left;
     .account {
-      background-color: #253141;
+      background-color: $nav1-color;
       height: 65px;
       padding-top: 35px;
         .name {
@@ -32,7 +32,7 @@
         }
      }
     .group {
-      background-color: #2f3e51;
+      background-color: $nav2-color;
       height: 726px;
         .group_name {
             color: $character-color;
@@ -65,7 +65,7 @@
             display: inline;
         }
         .content_group--edit{
-            background-color: white;
+            background-color: $character-color;
             color: $button-color;
             height: 40px;
             margin-right: 40px;
@@ -86,7 +86,7 @@
       height: 550px;
       padding-top: 46px;
       padding-left: 40px;
-      background-color: #AAAAAA;
+      background-color: $content-color;
       list-style: none;
         .content_message--name {
             color: $message-color;
