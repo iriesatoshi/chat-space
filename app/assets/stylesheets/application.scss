@@ -56,7 +56,7 @@
     .content_group {
       height: 65px;
       padding-top: 35px;
-      background-color: #AAAAAA;
+
       padding-left: 40px;
         .content_group--name {
             color: #333333;
@@ -65,12 +65,14 @@
         }
         .content_group--edit{
             background-color: white;
-            color: blue;
+            color: #38AEF0;
             height: 40px;
             margin-right: 40px;
             float: right;
             padding-left: 20px;
             padding-right: 20px;
+            border-width: thin;
+            border-color: #38AEF0;
         }
         .content_group--member{
             color: #999999;
@@ -83,6 +85,7 @@
       height: 550px;
       padding-top: 46px;
       padding-left: 40px;
+      background-color: #AAAAAA;
       list-style: none;
         .content_message--name {
             color: #434A54;
@@ -127,6 +130,7 @@
             float: right;
             margin-right: 40px;
             height: 50px;
+            border-style: none;
         }
     }
   }
