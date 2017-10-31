@@ -1,0 +1,36 @@
+%div.wrapper
+  %nav.side-nav
+    %div.account
+      %p.name SATOSHI
+      = link_to "/" do
+        %i.fa.fa-cog
+      = link_to "/" do
+        %i.fa.fa-pencil-square-o
+
+    %div.group
+      %p.group_name sample
+      %p.group_name--comment Hello World!
+      %p.group_name sample
+      %p.group_name--comment こんにちは世界！
+
+  %nav.content
+    %div.content_group
+      %p.content_group--name Sampleグループ
+      %input.content_group--edit{:type => "submit", :value => "Edit"}
+      %p.content_group--member Member:satoshi tomohiro michiko
+
+
+    %div.content_message
+      %li.content_message--name tomohiro
+      %li.content_message--date 2017/10/31/18:00:00
+      %li.content_message--comment Hello World!
+
+      %li.content_message--name michiko
+      %li.content_message--date 2017/10/31/19:00:00
+      %li.content_message--comment 何時に帰るの？
+
+    %div.content_typemessage
+      %p.content_typemessage--space type a message
+      %input.content_typemessage--send{:type => "submit", :value => "Send"}
+      = link_to "/" do
+        %i.fa.fa-file-image-o

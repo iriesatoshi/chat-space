@@ -1,0 +1,138 @@
+/*
+*= require font-awesome
+*/
+@import "./reset";
+@import "./variable";
+.wrapper{
+  .side-nav {
+    width: 300px;
+    float: left;
+    .account {
+      background-color: $nav1-color;
+      height: 65px;
+      padding-top: 35px;
+        .name {
+            color: $character-color;
+            font-size: 16px;
+            padding-left: 20px;
+            font-family: Bold;
+            display: inline;
+        }
+        .fa.fa-pencil-square-o{
+          color: $character-color;
+          padding-top: 5px;
+          padding-right: 20px;
+          float: right;
+        }
+        .fa.fa-cog{
+          color: $character-color;
+          padding-top: 5px;
+          padding-right: 20px;
+          float: right;
+        }
+     }
+    .group {
+      background-color: $nav2-color;
+      height: 726px;
+        .group_name {
+            color: $character-color;
+            font-size: 15px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+        .group_name--comment{
+            color: $character-color;
+            font-size: 11px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+    }
+  }
+
+  .content {
+    height: 550px;
+    width: calc(100vw - 300px);
+    float: left;
+    .content_group {
+      height: 65px;
+      padding-top: 35px;
+
+      padding-left: 40px;
+        .content_group--name {
+            color: #333333;
+            font-size: 20px;
+            display: inline;
+        }
+        .content_group--edit{
+            background-color: $character-color;
+            color: $button-color;
+            height: 40px;
+            margin-right: 40px;
+            float: right;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-width: thin;
+            border-color: $button-color;
+        }
+        .content_group--member{
+            color: $sub-color;
+            padding-top: 15px;
+            font-size: 12px;
+        }
+
+     }
+    .content_message {
+      height: 550px;
+      padding-top: 46px;
+      padding-left: 40px;
+      background-color: $content-color;
+      list-style: none;
+        .content_message--name {
+            color: $message-color;
+            font-size: 16px;
+            font-family: Bold;
+            padding-right: 10px;
+            float: left;
+        }
+        .content_message--date{
+            color: $sub-color;
+            font-size: 12px;
+            padding-top: 4px;
+        }
+        .content_message--comment {
+            color: $message-color;
+            font-size: 14px;
+            padding-top: 10px;
+            padding-bottom: 40px;
+        }
+    }
+    .content_typemessage {
+      height: 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+        .content_typemessage--space {
+            color: $message-color;
+            font-size: 16px;
+            padding-left: 10px;
+            display: inline;
+        }
+        .fa.fa-file-image-o{
+            padding-right: 25px;
+            float: right;
+        }
+        .content_typemessage--send {
+            background-color: $button-color;
+            color: $character-color;
+            font-size: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
+            float: right;
+            margin-right: 40px;
+            height: 50px;
+            border-style: none;
+        }
+    }
+  }
+}
