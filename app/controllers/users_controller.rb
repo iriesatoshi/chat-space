@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def update
-  user = User.find(params[:id])
+
       if current_user.update(user_params)
         redirect_to root_path
       else

@@ -4,7 +4,5 @@ Rails.application.routes.draw do
   root 'messages#index'
 
   resources :users, only: [:edit, :update]
-  # get '/users/:id/edit' => 'users#edit'
-  # put '/users/:id/update' => 'users#update'
 
 end
