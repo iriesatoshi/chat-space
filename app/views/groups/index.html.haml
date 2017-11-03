@@ -1,0 +1,13 @@
+%div.wrapper
+  %nav.side-nav
+    %div.account
+      %p.name= current_user.name
+      = link_to edit_user_path(current_user) do
+        %i.fa.fa-cog
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o
+
+    %div.group
+      - current_user.groups.each do |group|
+        %p.group_name= group.group_name
+        %p.group_name--comment Hello World!
