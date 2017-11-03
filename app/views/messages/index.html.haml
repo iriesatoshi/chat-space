@@ -8,10 +8,9 @@
         %i.fa.fa-pencil-square-o
 
     %div.group
-      %p.group_name sample
-      %p.group_name--comment Hello World!
-      %p.group_name sample
-      %p.group_name--comment こんにちは世界！
+      - current_user.groups.each do |group|
+        %p.group_name= group.group_name
+        %p.group_name--comment Hello World!
 
   %nav.content
     %div.content_group
