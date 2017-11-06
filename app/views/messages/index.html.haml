@@ -9,14 +9,17 @@
 
     %div.group
       - current_user.groups.each do |group|
-        %p.group_name= group.group_name
+        = link_to group_messages_path(group.id) do
+          %p.group_name= group.group_name
         %p.group_name--comment Hello World!
 
   %nav.content
     %div.content_group
-      %p.content_group--name Sampleグループ
+      %p.content_group--name= @group.group_name
       %input.content_group--edit{:type => "submit", :value => "Edit"}
-      %p.content_group--member Member:satoshi tomohiro michiko
+      %p.content_group--member
+        - @group.members.each do |member|
+          = "#{member.user.name}"
 
 
     %div.content_message
@@ -29,7 +32,7 @@
       %li.content_message--comment 何時に帰るの？
 
     %div.content_typemessage
-      %p.content_typemessage--space type a message
-      %input.content_typemessage--send{:type => "submit", :value => "Send"}
-      = link_to "/" do
-        %i.fa.fa-file-image-o
+      %p.content_typemessage--space
+        = form_for [@group,@message] do |f|
+          = f.text_field :body, :placeholder =>'type a message', autofocus: true
+          = f.submit "SEND"
