@@ -1,4 +1,5 @@
 class Message < ApplicationRecord
+  mount_uploader :image, ImagesUploader
   belongs_to :user
   belongs_to :group
 
