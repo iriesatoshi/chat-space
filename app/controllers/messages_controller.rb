@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
+
+before_action :group_find
+
   def index
-    @group = Group.find(params[:group_id])
     @messages = Message.where(group_id: params[:group_id])
     @message = Message.new
   end
@@ -11,7 +13,6 @@ class MessagesController < ApplicationController
         flash[:notice] = "メッセージを送信しました"
         redirect_to group_messages_path
       else
-        @group = Group.find(params[:group_id])
         @messages = Message.where(group_id: params[:group_id])
         flash.now[:alert] = "メッセージを入力してください"
         render "index"
@@ -22,6 +23,10 @@ class MessagesController < ApplicationController
 
    def message_params
      params.require(:message).permit(:body,:image).merge(group_id: params[:group_id]).merge(user_id: current_user.id)
+   end
+
+   def group_find
+    @group = Group.find(params[:group_id])
    end
 
 
