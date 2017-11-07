@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
+    @messages = Message.where(group_id: params[:group_id])
     @message = Message.new
   end
 
@@ -11,6 +12,7 @@ class MessagesController < ApplicationController
         redirect_to group_messages_path
       else
         @group = Group.find(params[:group_id])
+        @messages = Message.where(group_id: params[:group_id])
         flash.now[:alert] = "メッセージを入力してください"
         render "index"
       end

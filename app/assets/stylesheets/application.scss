@@ -60,7 +60,6 @@
     .content_group {
       height: 65px;
       padding-top: 35px;
-
       padding-left: 40px;
         .content_group--name {
             color: #333333;
@@ -89,8 +88,8 @@
       height: 550px;
       padding-top: 46px;
       padding-left: 40px;
-      background-color: $content-color;
       list-style: none;
+      background-color: #F2F2F2;
         .content_message--name {
             color: $message-color;
             font-size: 16px;
@@ -107,11 +106,14 @@
             color: $message-color;
             font-size: 14px;
             padding-top: 10px;
-            padding-bottom: 40px;
+        }
+        .content_message--image{
+
         }
     }
     .content_typemessage {
-      height: 50px;
+      background-color: $content-color;
+      height: 90px;
       padding-top: 20px;
       padding-bottom: 20px;
       padding-left: 40px;
@@ -121,9 +123,20 @@
             padding-left: 10px;
             display: inline;
         }
-        .fa.fa-file-image-o{
-            padding-right: 25px;
-            float: right;
+        .chat-message-form__input {
+            float: left;
+            width: 80%;
+            line-height: 30px;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            border-style: none;
+        }
+        .fileInput {
+            display: none;
+        }
+        .fa-file-image-o{
+            background-color: $character-color;
+            padding: 17px 10px;
         }
         .content_typemessage--send {
             background-color: $button-color;
@@ -131,8 +144,8 @@
             font-size: 16px;
             padding-left: 20px;
             padding-right: 20px;
-            float: right;
             margin-right: 40px;
+            float: right;
             height: 50px;
             border-style: none;
         }

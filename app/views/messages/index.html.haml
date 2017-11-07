@@ -23,16 +23,17 @@
 
 
     %div.content_message
-      %li.content_message--name tomohiro
-      %li.content_message--date 2017/10/31/18:00:00
-      %li.content_message--comment Hello World!
-
-      %li.content_message--name michiko
-      %li.content_message--date 2017/10/31/19:00:00
-      %li.content_message--comment 何時に帰るの？
+      - @messages.each do |message|
+        %li.content_message--name= message.user.name
+        %li.content_message--date= message.created_at
+        %li.content_message--comment= message.body
+        %li.content_message--image= image_tag message.image.to_s
 
     %div.content_typemessage
       %p.content_typemessage--space
         = form_for [@group,@message] do |f|
-          = f.text_field :body, :placeholder =>'type a message', autofocus: true
-          = f.submit "SEND"
+          = f.text_field :body, :placeholder =>'type a message', autofocus: true,class: 'chat-message-form__input'
+          = f.label :image do
+            %i.fa.fa-file-image-o
+              = f.file_field :image, class: 'fileInput'
+          = f.submit "Send", class: 'content_typemessage--send'
