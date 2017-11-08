@@ -9,5 +9,6 @@
 
     %div.group
       - current_user.groups.each do |group|
-        %p.group_name= group.group_name
+        = link_to group_messages_path(group.id) do
+          %p.group_name= group.group_name
         %p.group_name--comment Hello World!

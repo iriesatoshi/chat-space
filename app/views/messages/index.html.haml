@@ -9,27 +9,39 @@
 
     %div.group
       - current_user.groups.each do |group|
-        %p.group_name= group.group_name
-        %p.group_name--comment Hello World!
+        = link_to group_messages_path(group.id) do
+          %p.group_name= group.group_name
+          - if group.messages.present?
+            - group.messages.each_with_index do |message, i|
+              - if i == group.messages.length - 1
+                - if message.image.present?
+                  %p.group_name--comment 画像が投稿されています。
+                - else
+                  %p.group_name--comment= message.body
+          - else
+            %p.group_name--comment メッセージはまだありません。
 
   %nav.content
     %div.content_group
-      %p.content_group--name Sampleグループ
-      %input.content_group--edit{:type => "submit", :value => "Edit"}
-      %p.content_group--member Member:satoshi tomohiro michiko
+      %p.content_group--name= @group.group_name
+      %input.content_group--edit{type: "submit", value: "Edit"}
+      %p.content_group--member
+        - @group.members.each do |member|
+          = "#{member.user.name}"
 
 
     %div.content_message
-      %li.content_message--name tomohiro
-      %li.content_message--date 2017/10/31/18:00:00
-      %li.content_message--comment Hello World!
-
-      %li.content_message--name michiko
-      %li.content_message--date 2017/10/31/19:00:00
-      %li.content_message--comment 何時に帰るの？
+      - @messages.each do |message|
+        %li.content_message--name= message.user.name
+        %li.content_message--date= message.created_at
+        %li.content_message--comment= message.body
+        %li.content_message--image= image_tag message.image
 
     %div.content_typemessage
-      %p.content_typemessage--space type a message
-      %input.content_typemessage--send{:type => "submit", :value => "Send"}
-      = link_to "/" do
-        %i.fa.fa-file-image-o
+      %p.content_typemessage--space
+        = form_for [@group,@message] do |f|
+          = f.text_field :body, placeholder: 'type a message', autofocus: true,class: 'chat-message-form__input'
+          = f.label :image do
+            %i.fa.fa-file-image-o
+              = f.file_field :image, class: 'fileInput'
+          = f.submit "Send", class: 'content_typemessage--send'
