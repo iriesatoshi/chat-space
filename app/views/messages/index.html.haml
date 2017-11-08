@@ -11,12 +11,20 @@
       - current_user.groups.each do |group|
         = link_to group_messages_path(group.id) do
           %p.group_name= group.group_name
-        %p.group_name--comment Hello World!
+          - if group.messages.present?
+            - group.messages.each_with_index do |message, i|
+              - if i == group.messages.length - 1
+                - if message.image.present?
+                  %p.group_name--comment 画像が投稿されています。
+                - else
+                  %p.group_name--comment= message.body
+          - else
+            %p.group_name--comment メッセージはまだありません。
 
   %nav.content
     %div.content_group
       %p.content_group--name= @group.group_name
-      %input.content_group--edit{:type => "submit", :value => "Edit"}
+      %input.content_group--edit{type: "submit", value: "Edit"}
       %p.content_group--member
         - @group.members.each do |member|
           = "#{member.user.name}"
@@ -27,12 +35,12 @@
         %li.content_message--name= message.user.name
         %li.content_message--date= message.created_at
         %li.content_message--comment= message.body
-        %li.content_message--image= image_tag message.image.to_s
+        %li.content_message--image= image_tag message.image
 
     %div.content_typemessage
       %p.content_typemessage--space
         = form_for [@group,@message] do |f|
-          = f.text_field :body, :placeholder =>'type a message', autofocus: true,class: 'chat-message-form__input'
+          = f.text_field :body, placeholder: 'type a message', autofocus: true,class: 'chat-message-form__input'
           = f.label :image do
             %i.fa.fa-file-image-o
               = f.file_field :image, class: 'fileInput'

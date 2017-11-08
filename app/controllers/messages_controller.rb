@@ -22,12 +22,10 @@ before_action :group_find
   private
 
    def message_params
-     params.require(:message).permit(:body,:image).merge(group_id: params[:group_id]).merge(user_id: current_user.id)
+     params.require(:message).permit(:body,:image).merge(group_id: params[:group_id], user_id: current_user.id)
    end
 
    def group_find
     @group = Group.find(params[:group_id])
    end
-
-
 end
