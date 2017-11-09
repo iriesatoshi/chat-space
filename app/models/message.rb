@@ -4,8 +4,7 @@ class Message < ApplicationRecord
   belongs_to :group
 
   validates :body_or_image, presence: true
-  validates :group_id, presence: true
-  validates :user_id, presence: true
+  validates :group_id, :user_id, presence: true
 
   private
     def body_or_image
