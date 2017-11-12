@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
 
 before_action :group_find
-before_action :authenticate_user!
 
   def index
     @messages = Message.where(group_id: params[:group_id])
