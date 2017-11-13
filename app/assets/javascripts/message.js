@@ -1,9 +1,9 @@
 $(function(){
   function buildHTML(message){
-    var html = `<li>content_message--name${message.user.name}</li>
-                <li>content_message--date${message.created_at}</li>
-                <li>content_message--comment${message.body}</li>
-                <li>content_message--image${image_tag message.image}</li>`
+    var html = `<li class =  "content_message--name"> ${message.user_name}</li>
+                <li class = "content_message--date">${message.created_at}</li>
+                <li class = "content_message--comment">${message.body}</li>
+                <li class = "content_message--image>${message.image}</li>`
     return html;
   }
   $('#new_message').on('submit', function(e){
@@ -20,11 +20,11 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.content_message').append(html)
-      $('.textbox').val('')
+      $('.content_message').append(html);
+      $('.textbox').val('');
     })
     .fail(function(){
       alert('error');
-    })
-  })
+    });
+  });
 });
