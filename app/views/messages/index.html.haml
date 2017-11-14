@@ -40,7 +40,7 @@
     %div.content_typemessage
       %p.content_typemessage--space
         = form_for [@group,@message] do |f|
-          = f.text_field :body, placeholder: 'type a message', autofocus: true,class: 'chat-message-form__input'
+          = f.text_field :body, placeholder: 'type a message', autofocus: true,class: 'chat-message-form__input textbox'
           = f.label :image do
             %i.fa.fa-file-image-o
               = f.file_field :image, class: 'fileInput'

@@ -11,7 +11,10 @@ before_action :group_find
     @message = Message.new(message_params)
       if @message.save
         flash[:notice] = "メッセージを送信しました"
-        redirect_to group_messages_path
+        respond_to do |format|
+          format.html { redirect_to group_messages_path }
+          format.json
+        end
       else
         @messages = Message.where(group_id: params[:group_id])
         flash.now[:alert] = "メッセージを入力してください"
