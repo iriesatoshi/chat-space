@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   function buildHTML(message){
     var html = `<li class =  "content_message--name"> ${message.user_name}</li>
                 <li class = "content_message--date">${message.created_at}</li>
