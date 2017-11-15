@@ -32,7 +32,7 @@ $(function(){
   });
 });
 
-$(function(){
+$(document).on('turbolinks:load', function(){
   function buildHTML(data_name, data_id){
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${data_id}'>
                   <input name='group[user_ids][]' type='hidden' value='${data_id}'>
@@ -51,7 +51,7 @@ $(function(){
   });
 });
 
-$(function(){
+$(document).on('turbolinks:load', function(){
   $('.chat-group-user__name1').on('click', '.user-search-remove', function(e){
     e.preventDefault();
     $('.chat-group-user__name1').find('#chat-group-user-' + $(this).data('userId')).remove();

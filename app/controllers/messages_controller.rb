@@ -5,6 +5,7 @@ before_action :group_find
   def index
     @messages = Message.where(group_id: params[:group_id])
     @message = Message.new
+    @group = Group.find(params[:group_id])
   end
 
   def create

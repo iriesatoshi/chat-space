@@ -24,7 +24,7 @@
   %nav.content
     %div.content_group
       %p.content_group--name= @group.group_name
-      %input.content_group--edit{type: "submit", value: "Edit"}
+      = link_to("Edit", "/groups/#{@group.id}/edit", class: "content_group--edit right-header")
       %p.content_group--member
         - @group.members.each do |member|
           = "#{member.user.name}"
