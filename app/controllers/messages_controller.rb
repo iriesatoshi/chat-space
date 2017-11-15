@@ -6,6 +6,10 @@ before_action :group_find
     @messages = Message.where(group_id: params[:group_id])
     @message = Message.new
     @group = Group.find(params[:group_id])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create

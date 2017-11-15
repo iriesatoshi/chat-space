@@ -32,10 +32,15 @@
 
     %div.content_message
       - @messages.each do |message|
-        %li.content_message--name= message.user.name
-        %li.content_message--date= message.created_at
-        %li.content_message--comment= message.body
-        %li.content_message--image= image_tag message.image
+        .message{ "data-message-id": "#{message.id}"}
+          %li.content_message--name
+            = message.user.name
+          %li.content_message--date
+            = message.created_at
+          %li.content_message--comment
+            = message.body
+          %li.content_message--image
+            = image_tag message.image
 
     %div.content_typemessage
       %p.content_typemessage--space
